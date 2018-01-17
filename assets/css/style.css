@@ -1,0 +1,750 @@
+
+
+
+.modal-subscribe input[type="email"] {
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+}
+
+.modal-subscribe input[type="email"]:focus {
+  border: 1px solid #000;
+}
+
+input[type="submit"] {
+  font-weight: bold;
+  padding: 4px 8px;
+  border:1px solid #000;
+  background: #3b5998;
+  color:#fff;
+}
+
+form {
+ 
+  margin: 0 auto;
+}
+
+.p {
+  padding-top: 30px;
+}
+
+
+  .coupon-container
+    {
+        background-color: #fff;
+        max-width: 340px;
+        margin: 0 auto 20px !important ;
+        width: 48%;
+        border: 1px solid #D9E0E2;
+       
+        -webkit-border-radius: 10px;
+                border-radius: 10px;
+        font-size: 14px;
+        position: relative;
+        overflow: hidden;
+            margin-left: 5px !important;
+    }
+   .cc-topsection {
+    display: table;
+    width: 100%;
+}
+   .ccleft {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+    /* padding: 0 0 0 107px; */
+    text-align: center;
+}
+.ccleft img{
+    max-width: 60%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+.ccright {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+    text-align: right;
+}
+    .ccright img{
+        max-width: 120px;
+        border: 2px solid #D9E0E2;
+    }
+.ccright-inner {
+    display: table;
+    width: 100%;
+}
+.ccrinnner-left {
+    display: table-cell;
+    width: 40%;
+    padding: 5px;
+    vertical-align: middle;
+    font-weight: bold;
+    text-align: center;
+}
+.ccrinnner-left span {
+    background: #D9E0E2;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 19px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-right: 0;
+    -webkit-transform: rotate(-20deg);
+       -moz-transform: rotate(-20deg);
+        -ms-transform: rotate(-20deg);
+         -o-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+}
+.ccrinnner-right
+{
+    display: table-cell;
+    width: 60%;
+    vertical-align: middle;
+    padding: 5px;
+}
+.crate{
+        text-align: right;
+    display: table;
+    float: right;
+}
+.cborder{
+    height: 1px;
+    background: #D9E0E2;
+    width: 100%;
+    margin: 10px auto;
+}
+.exdate {
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+}
+.cc-infosection {
+    font-size: 14px;
+    color: #fff;
+    width: 480px;
+    width: 100%;
+    margin-top: 5px;
+    overflow: hidden;
+    text-align: left;
+    line-height: 1.3;
+}
+.cpnbtn {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 45px;
+    position: relative;
+    width: 180px;
+    height: 45px;
+    padding: 0 10px 0 0;
+    cursor: pointer;
+    text-align: right;
+    color: #ea5656;
+    border: 1px dashed #cd3232;
+    border-radius: 3px;
+    background-color: #ffeeee;
+}
+.cpnbtn .p1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 147px;
+    height: 47px;
+    margin: -1px 0 0 -1px;
+    padding-left: 10px;
+    white-space: nowrap;
+    color: white;
+    border-radius: 3px 0 0 3px;
+    background: #cd3232;
+}
+.cpnbtn .p2 {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    overflow: hidden;
+    width: 45px;
+    height: 100%;
+}
+.cpnbtn span {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 162px;
+    height: 100%;
+    color: #fff;
+}
+.cpnbtn .t1 {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 63.64px;
+    height: 63.64px;
+    transform: translate(-17px, -2px) rotate(-45deg);
+    background: #cd3232;
+}
+.cpnbtn .t1, .cpnbtn .t2 {
+    transition: transform .3s ease-out;
+    backface-visibility: hidden;
+}
+.cpnbtn .t1 {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 63.64px;
+    height: 63.64px;
+    transform: translate(-17px, -2px) rotate(-45deg);
+    background: #cd3232;
+}
+.cpnbtn .t2 {
+    position: absolute;
+    top: 17.5px;
+    right: -25px;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    background: #991717;
+}
+.selectcoupon{
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    vertical-align: top;
+    height: 40px;
+    background-color: #f6f6f6;
+    line-height: 40px;
+    width: 192px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.newitem {
+    position: absolute;
+    background: #2577BC;
+    color: #fff;
+    padding: 50px 35px 5px;
+    top: -30px;
+    left: -45px;
+    z-index: 10;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+
+/*Modal style*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+#myModal .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myModal .modal-content
+{
+
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 575px;
+    border-radius: 15px;
+
+}
+.md-show.md-scaled-effect .md-content {
+    opacity: 1;
+}
+.md-scaled-effect .md-content {
+    opacity: 0;
+    -webkit-transition: all 0.5s cubic-bezier(0.26, 0.71, 0.46, 1.19);
+    -moz-transition: all 0.5s cubic-bezier(0.26, 0.71, 0.46, 1.19);
+    transition: all 0.5s cubic-bezier(0.26, 0.71, 0.46, 1.19);
+}
+.couponmodal .cd-modal-content1 {
+    background-color: #f3f5f3;
+    border-radius: 15px 15px 0 0;
+    box-sizing: border-box;
+    padding-bottom: 27px;
+    position: relative;
+}
+
+.cd-modal-content1 {
+    padding: 20px;
+}
+.couponmodal .cd-modal-content1 .cd-modal-header {
+    text-align: left;
+}
+
+.cd-modal-content1 .cd-modal-header {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.cd-modal-content1 .cd-modal-popup-close {
+    font-size: 30px;
+    display: inline;
+    height: 20px;
+    line-height: 10px;
+    margin-top: -15px;
+    margin-right: -10px;
+    float: right;
+    font-weight: 300;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.couponmodal .cd-modal-content1 .offer-logo {
+    display: inline-block;
+    width: 24%;
+   
+    vertical-align: top;
+}
+.couponmodal .cd-modal-content1 .offer-logo img {
+    width: 100%;
+}
+.couponmodal .cd-modal-content1 .offer-description {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+}
+.couponmodal .cd-modal-content1 .offer-description .store-name {
+    font-weight: bold;
+    margin-bottom: 6px;
+    line-height: 1.57;
+    font-size: 16px;
+}
+.couponmodal .cd-modal-content1 .offer-description .title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.couponmodal .down-arrow {
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 20px solid #f3f5f3;
+    margin: auto;
+}
+.couponmodal  .cd-modal-bottom {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.couponmodal .cd-modal-bottom {
+    color: rgba(0,0,0,0.54);
+}
+.couponmodal .cd-modal-bottom .popup-code-block {
+    max-width: 400px;
+    min-width: 340px;
+    height: 48px;
+    display: inline-block;
+    background-color: rgba(216,216,216,0.2);
+    margin-top: 21px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.couponmodal .cd-modal-bottom .popup-code-block .code-txt {
+    height: 48px;
+    line-height: 48px;
+    max-width: 298px;
+    min-width: 242px;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    color: #cd3232;
+    transition: all .3s;
+    background-color: #ffffff;
+    font-weight: bold;
+    border-radius: 4px 0 0 4px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    border: 1px dashed #cd3232;
+    border-right: none;
+}
+.couponmodal .cd-modal-bottom .popup-code-block .btn-copied {
+    background-color: #5BB656;
+    color: #ffffff;
+}
+
+.couponmodal .cd-modal-bottom .popup-code-block .copy-btn {
+    width: 108px;
+    height: 48px;
+    line-height: 48px;
+    background-color: #cd3232;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    color: #ffffff;
+    cursor: pointer;
+    vertical-align: top;
+    float: right;
+    transition: all .3s;
+    margin-left: -1px;
+}
+.couponmodal  .cd-modal-bottom .popup-goto-link {
+    font-size: 14px;
+    margin-top: 10px;
+    color: rgba(0,0,0,0.54);
+}
+.couponmodal .cd-modal-bottom .popup-goto-link span{
+  color: #4a90e2;
+    cursor: pointer;
+    text-decoration: underline;
+ }
+.modal-subscribe {
+width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto ;
+}
+.modal-subscribe form
+{
+  float: none;
+    margin: 10px auto 10px auto;
+    border: 0;
+    
+    vertical-align: middle;  
+}
+body .md-content {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.modal-subscribe input[type="email"] {
+    
+    background: #fff;
+    box-shadow: unset;
+    border: 1px solid #ccc;
+    width: 234px;
+}
+.modal-content hr {
+    background: #f2f2f2;
+}
+.modal-subscribe input[type="submit"]{
+  float: left;
+    margin: 0 auto 0 8px;
+     border: 1px solid #ccc;
+}
+ #filters {
+      margin-bottom: 10px;
+ }
+
+
+
+
+.btn-modal {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 11px 50px;
+  display: inline-block;
+  margin: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-modal:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn-modal:before,
+.icon-heart:after,
+.icon-star:after,
+.icon-plus:after,
+.icon-file:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* Button 4 */
+.btn-4 {
+    border-radius: 50px;
+    border: 3px solid #24b662;
+    color: #24b662;
+    overflow: hidden;
+}
+
+.btn-4:active {
+  border-color: #17954c;
+  color: #17954c;
+}
+
+.btn-4:hover {
+  background: #24b662;
+  color: #ffff;
+}
+
+.btn-4:before {
+  position: absolute;
+  height: 100%;
+  font-size: 125%;
+  line-height: 3.5;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-4:active:before {
+  color: #17954c;
+}
+
+/* Button 4a */
+.btn-4a:before {
+  left: 130%;
+  top: 0;
+}
+
+.btn-4a:hover:before {
+  left: 80%;
+}
+
+
+
+
+#coupon-loop .project-item {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+}
+
+#coupon-loop .project-hover-content{
+    opacity: 0;
+}
+#coupon-loop .project-item.coupon-cover img {
+    width: 100%;
+    object-fit: cover;
+    height: 350px;
+}
+
+#coupon-loop .project-item img {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
+
+#coupon-loop .project-item:hover .project-hover {
+    background-color: rgba(0,0,0,0.7);
+}
+#coupon-loop .project-item:hover .project-hover-content{
+    opacity: 1;
+       -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateY(0);
+    -webkit-transition: all 0.4s 0.2s ease;
+    -o-transition: all 0.4s 0.2s ease;
+    transition: all 0.4s 0.2s ease;
+}
+
+#coupon-loop .project-hover {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100.1%;
+    height: 100%;
+    padding: 3em;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+#coupon-loop .project-item:hover .project-hover .project-title {
+  
+    font-size: 1.5em;
+    position: relative;
+    color: #fff;
+    top:0em;
+    font-weight: 500;
+    -webkit-transform: translateY(0em);
+    -ms-transform: translateY(0em);
+    -o-transform: translateY(0em);
+    transform: translateY(0em);
+    -webkit-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+
+#coupon-loop .project-item:hover .project-hover .project-description {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateY(0);
+    -webkit-transition: all 0.4s 0.2s ease;
+    -o-transition: all 0.4s 0.2s ease;
+    transition: all 0.4s 0.2s ease;
+}
+
+#coupon-loop .project-description {
+    opacity: 0;
+    margin-top: 12%;
+    line-height: 1.71;
+    color: #333333;
+    -webkit-transform: translateX(-1rem);
+    -ms-transform: translateX(-1rem);
+    -o-transform: translateX(-1rem);
+    transform: translateY(-1rem);
+}
+
+#coupon-loop .project-description {
+    opacity: 0;
+    margin-top: 12%;
+    line-height: 1.71;
+    color: #fff;
+    -webkit-transform: translateX(-1rem);
+    -ms-transform: translateX(-1rem);
+    -o-transform: translateX(-1rem);
+    transform: translateY(-1rem);
+}
+
+#coupon-loop .project-description li a {
+    background: #fff;
+    color: #555;
+    /* width: 25px; */
+    display: inline-block;
+    height: 25px;
+    text-align: center;
+    padding: 0 12px;
+    margin-left: 0;
+    line-height: 24px;
+    border-radius: 4px;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .coupon-container {
+        width: 100%;
+    }
+    #myModal .modal-content{
+        width: 96%;
+        margin: 0 auto 50px
+    }
+    .couponmodal .cd-modal-content1 .offer-logo, .couponmodal .cd-modal-content1 .offer-description{
+        width: 100%
+    }
+    .couponmodal .cd-modal-bottom{
+        padding: 20px;
+    }
+    .couponmodal .cd-modal-bottom .popup-code-block, .couponmodal .cd-modal-bottom .popup-code-block .copy-btn{
+        min-width: unset;
+        width: 100%;
+        margin:0 auto;
+        border-radius: 4px;
+    }
+   .couponmodal .cd-modal-bottom .popup-code-block .code-txt {
+    border-right: 1px dashed #cd3232;
+    margin-bottom: 5px;
+    width: 100%;
+    min-width: unset;
+    max-width: none;
+    border-radius: 4px;
+}
+    .couponmodal .cd-modal-bottom .popup-code-block {
+    display: block;
+    width: 100%;
+}
+.modal-link-btn a
+{
+    padding:11px 20px 
+}
+.modal-subscribe form div {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.modal-subscribe input[type="email"]{
+    width: 100%
+}
+.modal-subscribe form{
+    padding: 0 20px;
+}
+.modal.couponmodal
+    {
+        padding:50px 0;
+    }
+}
+
+.img-discount {
+        margin-top: 50%;
+    position: absolute;
+        font-size: 87px;
+}
+
