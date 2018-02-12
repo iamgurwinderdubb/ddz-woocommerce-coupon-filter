@@ -25,8 +25,23 @@ var file_frame;
       // We set multiple to false so only get one image from the uploader
       attachment = file_frame.state().get('selection').first().toJSON();
       
-      jQuery('#ddz_logo').val(attachment.id);
-      jQuery("#ddz_img_url").attr('src', attachment.url);
+      var tmpImg = new Image();
+tmpImg.src=attachment.url; //or  document.images[i].src;
+jQuery(tmpImg).one('load',function(){
+  orgWidth = tmpImg.width;
+  orgHeight = tmpImg.height;
+  if (orgHeight/orgWidth <= 0.7) { 
+        jQuery('#ddz_logo').val(attachment.id);
+        jQuery("#ddz_img_url").attr('src', attachment.url);
+  } else {
+      jQuery('#ddz_logo').val('');
+      jQuery("#ddz_img_url").attr('src', '');
+      jQuery('#img-error').html("Please Check your Image Aspect Ratio");
+  }
+});
+
+      
+     
 
       
     });
@@ -36,23 +51,6 @@ var file_frame;
   });
 
 
-
-// external js: isotope.pkgd.js
-
-
-$( function () {
-
-  var $container = $('#coupon-loop');
-
-  $container.isotope({})
-
-  $('#filter-select').change( function() {
-    $container.isotope({
-      filter: this.value
-    });
-  });
-
-});
 
 
 
@@ -94,4 +92,34 @@ function copyToClipboard(element) {
 
 }
 
+
+$(function() {
+    var $container = $('#coupon-loop'),
+        $select = $('div#filters select');
+    filters = {};
+
+    $container.isotope({
+        itemSelector: '.item'
+    });
+        $select.change(function() {
+        var $this = $(this);
+
+        var $optionSet = $this;
+        var group = $optionSet.attr('data-filter-group');
+    filters[group] = $this.find('option:selected').attr('data-filter-value');
+
+        var isoFilters = [];
+        for (var prop in filters) {
+            isoFilters.push(filters[prop])
+        }
+        var selector = isoFilters.join('');
+
+        $container.isotope({
+            filter: selector
+        });
+
+        return false;
+    });
+
+});
 

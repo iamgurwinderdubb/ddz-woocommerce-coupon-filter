@@ -70,11 +70,12 @@ add_action('wp_ajax_nopriv_get_coupon_id', array( $this, 'get_coupon_id_callback
 				</p>
 				<p class="form-field ">
 					<label for="coupon_img">Coupon Image</label>
+
 					<?php $im_id = get_post_meta( $post->ID, 'ddz_woo_coupon_logo', true );
 					if ($im_id) {
 					 	$image = wp_get_attachment_url( $im_id );
 					 	echo '<img id="ddz_img_url" src="'.$image.'" width="200px" height="auto" >';
-					 	echo '<input type="hidden" name="ddz_woo_coupon_logo" value="'.$im_id.'" />';
+					 	echo '<input type="hidden" id="ddz_logo" name="ddz_woo_coupon_logo" value="'.$im_id.'" />';
 					 }  else {
 					 	echo '<img id="ddz_img_url" src="" width="200px" height="auto" >';
 					 	echo '<input type="hidden" name="ddz_woo_coupon_logo" id="ddz_logo" value="">';
@@ -83,8 +84,9 @@ add_action('wp_ajax_nopriv_get_coupon_id', array( $this, 'get_coupon_id_callback
 					?>
 					
 					<input type="submit"  name="button" id="upload_image_button" class="button" value="Add Logo"/>
-					
+					<div id="img-error" style="color: red;"></div>
 				</p>
+				<p style="color: red;">Please Use image Aspect ratio 2:1, e.g : width 300px X 150px</p>
 				<p class="form-field ">
 					<label for="coupon_description">Coupon Descritpion</label>
 					<?php 
@@ -137,8 +139,10 @@ add_action('wp_ajax_nopriv_get_coupon_id', array( $this, 'get_coupon_id_callback
 		}
 		$args = array(
 				'posts_per_page'   => -1,
-				'orderby'          => 'date',
-				'order'            => 'DESC',
+				'post_type' => 'event', 
+			    'meta_key' => 'date_expires', 
+			    'orderby' => 'meta_value', 
+			    'order' => 'DESC',				
 				'post_type'        => 'shop_coupon',
 				'post_status'      => 'publish',
 				'suppress_filters' => true 
@@ -151,29 +155,69 @@ add_action('wp_ajax_nopriv_get_coupon_id', array( $this, 'get_coupon_id_callback
 		);
 		$terms = get_terms($args);
 		//print_r($product_categories);
+
+		$user_args = array(
+    'role'    => 'dc_vendor',
+    'orderby' => 'user_nicename',
+    'order'   => 'ASC'
+);
+$users = get_users( $user_args );
+
 		?>
 		<div>
 			<h2>Filter</h2>
-			<div id="filters" class="button-group"> 
-				<select id="filter-select" >
-					<option value="*" selected>Select</option>
-					<?php 	 
-					// $args = array('number' => '',);
-					// $terms = get_terms('coupon_category', $args );
-					
-					foreach ($terms as $term) {
-						echo '<option value=".'.$term->slug.'">'.$term->name.'</option>';
-					}
+				<div id="filters">
+					<div class="sort-by-expiry"> 
+						<p>Sort by Expiration</p>
+						<select class="filter option-set" data-filter-group="month" >
+							<option data-filter-value="*" selected>Select</option>
+							<?php 	$month = date('n');
+									$max = (12-$month); 
+									for ($x = 0; $x < $max; $x++) {
+									    
 
-				 ?>
-				</select> 
-				<!-- <button class="button is-checked" data-filter="*">show all</button> -->
+									 echo '<option data-filter-value=".'.date('F-Y', mktime(0,0,0,$month + $x,1)).'">'.date('F Y', mktime(0,0,0,$month + $x,1)).'</option>';
+									}  ?>
+						</select>
+					</div>
+					<div class="sort-by-category"> 
+						<p>Sort by Category</p>
+						<select class="filter option-set" data-filter-group="category" >
+							<option data-filter-value="*" selected>Select</option>
+							<?php 	 
+							// $args = array('number' => '',);
+							// $terms = get_terms('coupon_category', $args );
+							
+							foreach ($terms as $term) {
+								echo '<option data-filter-value=".'.$term->slug.'">'.$term->name.'</option>';
+							}
+
+						 ?>
+						</select> 
+					</div>
+					<!-- <button class="button is-checked" data-filter="*">show all</button> -->
+					<div class="sort-by-vendor">
+						<p>Sort by Vendor</p>
+						<select class="filter option-set" data-filter-group="vedor" >
+							<option data-filter-value="*" selected>Select</option>
+							<?php 	 
+							
+							
+							foreach ($users as $user) {
+
+								echo '<option data-filter-value=".'.$user->ID.'">'.$user->display_name.'</option>';
+							}
+
+						 ?>
+						</select> 
+						<!-- <button class="button is-checked" data-filter="*">show all</button> -->
+					</div>
 				
+
 			</div>
 		</div>
-
 		<div id="coupon-loop" class="grid">
-			<?php 
+			<?php  
 			foreach ($coupons as $coupon) {
 
 			$meta = get_post_meta($coupon->ID);
@@ -183,11 +227,11 @@ add_action('wp_ajax_nopriv_get_coupon_id', array( $this, 'get_coupon_id_callback
 				 $term_data = get_term( $key, 'product_cat');
 				 $cats .= $term_data->slug.' ';
 			}
-			
+			$date_expires = get_post_meta($coupon->ID,'date_expires',true);
 			?>
-			<div class="coupon-container transition <?php echo $cats; ?>" data-category="transition">
+			<div class="item coupon-container transition <?php echo $cats; ?> <?php echo $coupon->post_author; ?> <?php echo date('F-Y',$date_expires); ?>" data-category="transition">
 				<?php 
-					 	 $date_expires = get_post_meta($coupon->ID,'date_expires',true);
+					 	 
 					 	 if ($date_expires > time()) {
 					 	 	echo '<div class="newitem">New</div>';
 					 	 } ?>
@@ -207,6 +251,7 @@ add_action('wp_ajax_nopriv_get_coupon_id', array( $this, 'get_coupon_id_callback
 
 									 }
 									 ?>
+
 								 <div class="project-hover">
 									<div class="project-hover-content">
 									<h3 class="project-title">About Offer</h3>
